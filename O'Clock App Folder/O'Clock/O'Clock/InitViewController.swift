@@ -39,7 +39,7 @@ class InitViewController: UIViewController {
     }
     
     func afterLoad(){ //transition to "" vc, "" = arrow
-        performSegue(withIdentifier: "test_segue", sender: self)
+        performSegue(withIdentifier: "load_segue", sender: self)
     }
     
     override func viewDidLoad() {
