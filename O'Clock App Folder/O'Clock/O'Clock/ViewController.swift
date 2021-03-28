@@ -12,19 +12,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var Clock: UIImageView!
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var TimeText: UILabel!
+    @IBOutlet weak var topBar: UINavigationItem!
     
     static var clicked: Bool = false //for StartButton
-    static var sec: Int = 1
+    var sec: Int = 1
+    var titleText = String()
+    var segueSignal = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = titleText
+        
         Clock.layer.masksToBounds = true
         Clock.layer.cornerRadius = Clock.bounds.width / 2
         //Sets the constraints to circular view so that the buttons nearby are not bothered.
         
-        TimeText.text = "00:00:00"
+        TimeText.text = String(format: "%02d:%02d:%02d", sec/3600, (sec%3600)/60, sec%60)
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let menuVC = segue.destination as? TableViewController else { return }
+        menuVC.timeAdded = sec
+        menuVC.segueSignal = segueSignal
+        menuVC.dateNow = Date(timeIntervalSinceNow: 0)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
 
+        let navigationController: UINavigationController = self.navigationController!
+
+        let controllers: [TableViewController] = navigationController.viewControllers.filter({ $0 is TableViewController }) as! [TableViewController]
+
+        if let viewController: TableViewController = controllers.first {
+            viewController.timeAdded = sec
+        }
+    }
+    
+    
     private func updateTime(displayTime: Int){
         self.TimeText.text = String(format: "%02d:%02d:%02d", displayTime/3600, (displayTime%3600)/60, displayTime%60)
     }
@@ -38,7 +64,7 @@ class ViewController: UIViewController {
             StartButton.setTitle("Stop", for: .normal)
             ViewController.clicked = true
         }
-        rotate(howManySec: ViewController.sec)
+        rotate(howManySec: sec)
     }
 
     private func rotate(howManySec seconds: Int){
@@ -48,10 +74,10 @@ class ViewController: UIViewController {
             animations: {self.Clock.transform = CGAffineTransform(rotationAngle: (6 * .pi * CGFloat(seconds) / 180))},
                 completion: { [self] finished in
                     
-                    updateTime(displayTime: ViewController.sec)
+                    updateTime(displayTime: sec)
                     
                     if(ViewController.clicked){
-                        ViewController.sec = seconds + 1
+                        sec = seconds + 1
                         rotate(howManySec: seconds + 1)
                     }
                 }

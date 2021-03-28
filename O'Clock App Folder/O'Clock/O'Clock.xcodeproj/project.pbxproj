@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		43179B9225FE041D001EFD30 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43179B9125FE041D001EFD30 /* InitViewController.swift */; };
 		43179B9925FF2F7E001EFD30 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43179B9825FF2F7E001EFD30 /* TableViewController.swift */; };
-		43179B9C25FF3454001EFD30 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43179B9B25FF3454001EFD30 /* CustomCell.swift */; };
 		43F9C19125F99F430021B6CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9C19025F99F430021B6CC /* AppDelegate.swift */; };
 		43F9C19325F99F430021B6CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9C19225F99F430021B6CC /* SceneDelegate.swift */; };
 		43F9C19525F99F430021B6CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9C19425F99F430021B6CC /* ViewController.swift */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		43179B9125FE041D001EFD30 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		43179B9825FF2F7E001EFD30 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		43179B9B25FF3454001EFD30 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		43F9C18D25F99F430021B6CC /* O'Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O'Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9C19025F99F430021B6CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F9C19225F99F430021B6CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				43F9C19B25F99F460021B6CC /* LaunchScreen.storyboard */,
 				43F9C19E25F99F460021B6CC /* Info.plist */,
 				43179B9825FF2F7E001EFD30 /* TableViewController.swift */,
-				43179B9B25FF3454001EFD30 /* CustomCell.swift */,
 			);
 			path = "O'Clock";
 			sourceTree = "<group>";
@@ -150,7 +147,6 @@
 				43F9C19125F99F430021B6CC /* AppDelegate.swift in Sources */,
 				43179B9225FE041D001EFD30 /* InitViewController.swift in Sources */,
 				43179B9925FF2F7E001EFD30 /* TableViewController.swift in Sources */,
-				43179B9C25FF3454001EFD30 /* CustomCell.swift in Sources */,
 				43F9C19325F99F430021B6CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
